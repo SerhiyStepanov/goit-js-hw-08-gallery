@@ -1,7 +1,5 @@
-import gallery from "./js/gallery-items";
+const { default: galleryItems } = require("./gallery-items");
 
-const murkUpGallery = ({ preview, original, description }) => {
-  console.log(gallery[0]);
-};
+import gallery from "./gallery-items.js";
 
-murkUpGallery(gallery);
+console.log(gallery);
