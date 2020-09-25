@@ -24,4 +24,4 @@ const markupGallery = gallery.map(markupGalleryCart).join("");
 // console.log(markupGallery);
 galleryImg.insertAdjacentHTML("afterbegin", markupGallery);
 
-console.log(galleryImg);
+// console.log(galleryImg);
