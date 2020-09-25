@@ -1,5 +1,3 @@
-const { default: galleryItems } = require("./gallery-items");
-
-import gallery from "./gallery-items.js";
+import gallery from "./gallery-items";
 
 console.log(gallery);
