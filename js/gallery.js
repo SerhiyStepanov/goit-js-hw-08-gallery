@@ -16,12 +16,18 @@ const markupGalleryCart = ({ original, preview, description }) => {
 </li>`;
 };
 
-// console.log(gallery);
-
 const galleryImg = document.querySelector(".gallery");
-// console.log(galleryImg);
+console.log(galleryImg);
+const openModalGallery = document.querySelector(".lightbox");
+console.log(openModalGallery);
+const closeModalbtn = document.querySelector(".lightbox__button");
+console.log(closeModalbtn);
+
 const markupGallery = gallery.map(markupGalleryCart).join("");
-// console.log(markupGallery);
 galleryImg.insertAdjacentHTML("afterbegin", markupGallery);
 
-// console.log(galleryImg);
+galleryImg.addEventListener("click", onClickImage);
+
+function onClickImage(event) {
+  console.log(event.target);
+}
