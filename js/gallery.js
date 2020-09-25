@@ -1,3 +1,3 @@
-import gallery from "./gallery-items";
+import gallery from "./gallery-items.js";
 
 console.log(gallery);
