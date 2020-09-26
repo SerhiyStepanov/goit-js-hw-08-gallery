@@ -16,18 +16,40 @@ const markupGalleryCart = ({ original, preview, description }) => {
 </li>`;
 };
 
-const galleryImg = document.querySelector(".gallery");
-console.log(galleryImg);
-const openModalGallery = document.querySelector(".lightbox");
-console.log(openModalGallery);
+const galleryImage = document.querySelector(".gallery");
+// console.log(galleryImage);
+
+const openModal = document.querySelector(".lightbox");
+// console.log(openModal);
+
+const imgOpenInModal = document.querySelector(".lightbox__image");
+// console.log(imgOpenInModal);
+
 const closeModalbtn = document.querySelector(".lightbox__button");
-console.log(closeModalbtn);
+// console.log(closeModalbtn);
 
 const markupGallery = gallery.map(markupGalleryCart).join("");
-galleryImg.insertAdjacentHTML("afterbegin", markupGallery);
+galleryImage.insertAdjacentHTML("afterbegin", markupGallery);
 
-galleryImg.addEventListener("click", onClickImage);
+const imageEl = document.querySelector(".gallery__image");
+// console.log(imageEl);
 
-function onClickImage(event) {
-  console.log(event.target);
+galleryImage.addEventListener("click", onOpenModal);
+closeModalbtn.addEventListener("click", onCloseModal);
+
+function onOpenModal(event) {
+  event.preventDefault();
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
+  // console.log(event.target);
+  openModal.classList.add("is-open");
+}
+
+function onCloseModal(event) {
+  if (event.target.nodeName !== "BUTTON") {
+    return;
+  }
+  // console.log(event.target);
+  openModal.classList.remove("is-open");
 }
