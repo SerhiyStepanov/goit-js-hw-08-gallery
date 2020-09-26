@@ -43,7 +43,7 @@ function onOpenModal(event) {
   if (event.target.nodeName !== "IMG") {
     return;
   }
-  // console.log(event.target);
+  window.addEventListener("keydown", onPressEscape);
   backdrop.classList.add("is-open");
   imgOpenInModal.src = event.target.dataset.source;
 }
@@ -54,10 +54,22 @@ function onCloseModal(event) {
   }
   backdrop.classList.remove("is-open");
   imgOpenInModal.src = "";
+  window.removeEventListener("keydown", onPressEscape);
 }
+
 function onClickBackdrop(event) {
   if (event.target.classList.contains("lightbox__overlay")) {
     backdrop.classList.remove("is-open");
     imgOpenInModal.src = "";
+    window.removeEventListener("keydown", onPressEscape);
+  }
+}
+
+function onPressEscape(event) {
+  console.log(event.code);
+  if (event.code === "Escape") {
+    backdrop.classList.remove("is-open");
+    imgOpenInModal.src = "";
+    window.removeEventListener("keydown", onPressEscape);
   }
 }
