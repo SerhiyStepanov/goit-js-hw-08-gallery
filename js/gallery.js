@@ -19,8 +19,8 @@ const markupGalleryCart = ({ original, preview, description }) => {
 const galleryImage = document.querySelector(".gallery");
 // console.log(galleryImage);
 
-const openModal = document.querySelector(".lightbox");
-// console.log(openModal);
+const backdrop = document.querySelector(".lightbox");
+// console.log(backdrop);
 
 const imgOpenInModal = document.querySelector(".lightbox__image");
 // console.log(imgOpenInModal);
@@ -36,6 +36,7 @@ const imageEl = document.querySelector(".gallery__image");
 
 galleryImage.addEventListener("click", onOpenModal);
 closeModalbtn.addEventListener("click", onCloseModal);
+backdrop.addEventListener("click", onClickBackdrop);
 
 function onOpenModal(event) {
   event.preventDefault();
@@ -43,7 +44,7 @@ function onOpenModal(event) {
     return;
   }
   // console.log(event.target);
-  openModal.classList.add("is-open");
+  backdrop.classList.add("is-open");
   imgOpenInModal.src = event.target.dataset.source;
 }
 
@@ -51,7 +52,12 @@ function onCloseModal(event) {
   if (event.target.nodeName !== "BUTTON") {
     return;
   }
-  // console.log(event.target);
-  openModal.classList.remove("is-open");
+  backdrop.classList.remove("is-open");
   imgOpenInModal.src = "";
+}
+function onClickBackdrop(event) {
+  if (event.target.classList.contains("lightbox__overlay")) {
+    backdrop.classList.remove("is-open");
+    imgOpenInModal.src = "";
+  }
 }
