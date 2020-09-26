@@ -59,25 +59,16 @@ function onCloseModalBtn(event) {
     return;
   }
   closeModal();
-  // backdrop.classList.remove("is-open");
-  // imgOpenInModal.src = "";
-  // window.removeEventListener("keydown", onCloseModalEscape);
 }
 
 function onCloseModalBackdrop(event) {
   if (event.target.classList.contains("lightbox__overlay")) {
     closeModal();
-    // backdrop.classList.remove("is-open");
-    // imgOpenInModal.src = "";
-    // window.removeEventListener("keydown", onCloseModalEscape);
   }
 }
 
 function onCloseModalEscape(event) {
   if (event.code === "Escape") {
     closeModal();
-    // backdrop.classList.remove("is-open");
-    // imgOpenInModal.src = "";
-    // window.removeEventListener("keydown", onCloseModalEscape);
   }
 }
