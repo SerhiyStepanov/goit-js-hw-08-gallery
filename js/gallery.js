@@ -66,7 +66,6 @@ function onClickBackdrop(event) {
 }
 
 function onPressEscape(event) {
-  console.log(event.code);
   if (event.code === "Escape") {
     backdrop.classList.remove("is-open");
     imgOpenInModal.src = "";
