@@ -44,6 +44,7 @@ function onOpenModal(event) {
   }
   // console.log(event.target);
   openModal.classList.add("is-open");
+  imgOpenInModal.src = event.target.dataset.source;
 }
 
 function onCloseModal(event) {
