@@ -53,4 +53,5 @@ function onCloseModal(event) {
   }
   // console.log(event.target);
   openModal.classList.remove("is-open");
+  imgOpenInModal.src = "";
 }
