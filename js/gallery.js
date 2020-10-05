@@ -28,8 +28,8 @@ const markupGallery = gallery.map(markupGalleryCart).join("");
 
 galleryImages.insertAdjacentHTML("afterbegin", markupGallery);
 
-const imageEl = document.querySelector(".gallery__image");
-// console.log(imageEl)
+const imageElement = document.querySelector(".gallery__image");
+// console.log(imageElement);
 
 galleryImages.addEventListener("click", onOpenModal);
 closeModalbtn.addEventListener("click", onCloseModalBtn);
