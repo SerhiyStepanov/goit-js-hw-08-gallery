@@ -25,10 +25,11 @@ const imgOpenInModal = document.querySelector(".lightbox__image");
 const closeModalbtn = document.querySelector(".lightbox__button");
 // console.log(closeModalbtn);
 const markupGallery = gallery.map(markupGalleryCart).join("");
+
 galleryImages.insertAdjacentHTML("afterbegin", markupGallery);
 
 const imageEl = document.querySelector(".gallery__image");
-// console.log(imageEl);
+// console.log(imageEl)
 
 galleryImages.addEventListener("click", onOpenModal);
 closeModalbtn.addEventListener("click", onCloseModalBtn);
@@ -36,6 +37,8 @@ backdrop.addEventListener("click", onCloseModalBackdrop);
 
 function onOpenModal(event) {
   event.preventDefault();
+  //   console.log(event.currentTarget);
+  //   console.log(event.target);
   if (event.target.nodeName !== "IMG") {
     return;
   }
