@@ -26,25 +26,5 @@
     "gh-pages": "^3.1.0",
     "parcel-plugin-custom-dist-structure": "^1.1.16",
     "parcel-plugin-nuke-dist": "^1.0.1"
-  },
-  "customDistStructure": {
-    "config": {
-      ".js": "js",
-      ".html": "html",
-      ".css": "css",
-      "images": [
-        ".jpg",
-        ".png",
-        ".svg"
-      ],
-      ".fileExtension": "folder/in/dist",
-      "folder/in/dist": [
-        ".file",
-        ".extensions"
-      ]
-    },
-    "options": {
-      "development": true
-    }
   }
 }
