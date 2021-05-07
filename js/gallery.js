@@ -12,6 +12,7 @@ const markupGalleryCart = ({ original, preview, description }) => {
       data-source="${original}"
       alt="${description}"
     />
+    <p class="text">${description}</p>
   </a>
 </li>`;
 };
